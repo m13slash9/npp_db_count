@@ -19,9 +19,9 @@ number_of_titles.sort(reverse=True)
 
 #Create message text
 out_string = ''
-for cntr in range(top_to_show):
+for cntr in range(min(top_to_show,len(unique_names))):
 	out_string += number_of_titles[cntr]['title'] + ": " + str(number_of_titles[cntr]['quantity']) + "\n" + "\n"
 out_string = out_string[:-2]
 
 #Display results
-notepad.messageBox(out_string,"Top " + str(top_to_show) + " entries") 
+notepad.messageBox(out_string,"Top " + str(min(top_to_show,len(unique_names))) + " entries") 
